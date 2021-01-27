@@ -3,6 +3,7 @@ package com.crm.qa.testcases;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.TestUtil;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,11 +13,11 @@ public class LoginPageTest extends TestBase {
 
    LoginPage loginPage;
    HomePage homePage;
+
     public LoginPageTest(){
         super(); //1st initialize the superMethod--
         // --TestBase inorder to initialize properties
     }
-
 
     @BeforeMethod
     public void setup(){
@@ -40,15 +41,11 @@ public class LoginPageTest extends TestBase {
     public void loginTest(){
        homePage = loginPage.login(prop.getProperty("username")
                , prop.getProperty("password") );
-
     }
-
-
-
 
     @AfterMethod
     public void tearDown(){
-
+        TestUtil.sleep(1000);
         driver.quit();
 
     }

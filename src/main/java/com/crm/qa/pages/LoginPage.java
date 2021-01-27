@@ -11,7 +11,6 @@ public class LoginPage extends TestBase {
 
     @FindBy(name="USER_LOGIN")
     WebElement username;
-
     @FindBy(name="USER_PASSWORD")
     WebElement password;
     @FindBy(className = "login-btn")
@@ -20,6 +19,7 @@ public class LoginPage extends TestBase {
     WebElement resetPass;
     @FindBy(xpath = "//*[contains(@class,'head')]")
     WebElement authHeader;
+
     //initialize Elements//
         public LoginPage(){
             PageFactory.initElements(driver,this);
